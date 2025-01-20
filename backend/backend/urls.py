@@ -24,5 +24,6 @@ router.register(r'items', ItemViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/",include(router.urls))
+    # path("api/",include(router.urls)),
+    path("api/user/",include('api.user.urls'))
 ]
