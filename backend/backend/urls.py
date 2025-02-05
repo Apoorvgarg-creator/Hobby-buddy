@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from api.views import ItemViewSet
+from api.user.views import metrics
 
 router = DefaultRouter()
 router.register(r'items', ItemViewSet)
@@ -25,5 +26,6 @@ router.register(r'items', ItemViewSet)
 urlpatterns = [
     path("admin/", admin.site.urls),
     # path("api/",include(router.urls)),
-    path("api/user/",include('api.user.urls'))
+    path("api/user/",include('api.user.urls')),
+    path("metrics/", metrics, name="metrics")
 ]
